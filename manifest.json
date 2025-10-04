@@ -1,0 +1,14 @@
+{
+  "name": "D&R Fried Chicken",
+  "short_name": "D&R Chicken",
+  "description": "Ayam goreng crispy renyah, gurih, bikin nagih.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#d71921",
+  "icons": [
+    { "src": "/assets/icons/logo.svg", "sizes": "120x120", "type": "image/svg+xml" },
+    { "src": "/assets/icons/favicon.svg", "sizes": "64x64", "type": "image/svg+xml" },
+    { "src": "/assets/icons/logo.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

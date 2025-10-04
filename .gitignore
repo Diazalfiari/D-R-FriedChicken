@@ -1,0 +1,11 @@
+# Ignore generated or unwanted files
+README.md
+
+# Node / tooling (if added later)
+node_modules/
+.env
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
