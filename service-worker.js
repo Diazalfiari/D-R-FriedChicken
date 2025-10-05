@@ -1,9 +1,10 @@
-const CACHE_NAME = 'drfriedchicken-v3';
+const CACHE_VERSION = '20251005';
+const CACHE_NAME = `drfriedchicken-v4-${CACHE_VERSION}`;
 const CORE_ASSETS = [
   '/',
   '/index.html',
-  '/assets/css/style.css',
-  '/assets/js/main.js',
+  `/assets/css/style.css?v=${CACHE_VERSION}`,
+  `/assets/js/main.js?v=${CACHE_VERSION}`,
   '/assets/icons/logo.svg',
   '/assets/icons/favicon.svg',
   '/assets/icons/logo.png'
@@ -16,7 +17,11 @@ self.addEventListener('install', e => {
 
 self.addEventListener('activate', e => {
   e.waitUntil(
-    caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))).then(() => self.clients.claim())
+    caches.keys()
+      .then(keys => Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))))
+      .then(() => self.clients.claim())
+      .then(() => self.clients.matchAll({ type: 'window' }))
+      .then(clients => clients.forEach(client => client.postMessage({ type: 'SW_UPDATED', version: CACHE_VERSION })))
   );
 });
 
