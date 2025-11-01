@@ -114,7 +114,7 @@ body:not(.js) [data-animate]{opacity:1; transform:none}
 
 /* Ribbons / Marquee */
 .ribbon { background:var(--clr-primary); color:#fff; padding:.55rem 0; position:relative; overflow:hidden; }
-.marquee { --speed:10000s; width:100%; white-space:nowrap; overflow:hidden; }
+.marquee { --speed:25s; width:100%; white-space:nowrap; overflow:hidden; }
 .marquee-track { display:inline-block; animation:marquee var(--speed) linear infinite; font-weight:600; letter-spacing:.5px; }
 @keyframes marquee { 0%{ transform:translateX(0);} 100%{ transform:translateX(-50%);} }
 

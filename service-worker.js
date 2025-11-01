@@ -1,4 +1,4 @@
-const CACHE_VERSION = '20251008';
+const CACHE_VERSION = '20251009';
 const CACHE_NAME = `drfriedchicken-v4-${CACHE_VERSION}`;
 const CORE_ASSETS = [
   '/',
