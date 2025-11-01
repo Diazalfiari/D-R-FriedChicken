@@ -114,7 +114,7 @@ body:not(.js) [data-animate]{opacity:1; transform:none}
 
 /* Ribbons / Marquee */
 .ribbon { background:var(--clr-primary); color:#fff; padding:.55rem 0; position:relative; overflow:hidden; }
-.marquee { --speed:34s; width:100%; white-space:nowrap; overflow:hidden; }
+.marquee { --speed:10000s; width:100%; white-space:nowrap; overflow:hidden; }
 .marquee-track { display:inline-block; animation:marquee var(--speed) linear infinite; font-weight:600; letter-spacing:.5px; }
 @keyframes marquee { 0%{ transform:translateX(0);} 100%{ transform:translateX(-50%);} }
 
@@ -229,8 +229,37 @@ body:not(.js) [data-animate]{opacity:1; transform:none}
 .newsletter { display:flex; gap:.6rem; }
 .newsletter input { flex:1; background:#1f1f1f; border:1px solid #333; color:#fff; padding:.65rem .8rem; border-radius:var(--radius-sm); }
 .sub-footer { border-top:1px solid #222; font-size:.7rem; padding:1.1rem 0; }
-.to-top { display:inline-flex; width:34px; height:34px; border-radius:50%; background:#1f1f1f; align-items:center; justify-content:center; color:#fff; font-size:1.2rem; border:1px solid #222; }
-.to-top:hover { background:var(--clr-primary); }
+.to-top { 
+  position: fixed; 
+  bottom: 2rem; 
+  right: 2rem; 
+  display: inline-flex; 
+  width: 48px; 
+  height: 48px; 
+  border-radius: 50%; 
+  background: #1f1f1f; 
+  align-items: center; 
+  justify-content: center; 
+  color: #fff; 
+  font-size: 1.4rem; 
+  border: 1px solid #222; 
+  box-shadow: var(--shadow-lg);
+  z-index: 100;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+.to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.to-top:hover { 
+  background: var(--clr-primary); 
+  transform: translateY(-4px);
+  box-shadow: 0 12px 45px -12px rgba(0,0,0,.35);
+}
 
 /* Utilities */
 .menu-extra details { background:var(--clr-bg-alt); border:1px solid var(--clr-border); padding:1rem 1.2rem; border-radius:var(--radius); box-shadow:var(--shadow-sm); cursor:pointer; }
@@ -264,6 +293,13 @@ body:not(.js) [data-animate]{opacity:1; transform:none}
   .product-category .card-body { padding:.85rem .7rem; gap:.35rem; }
   #menuGrid .card-body h3,
   .product-category .card-body h3 { font-size:.9rem; }
+  .to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
   #menuGrid .card-body p,
   .product-category .card-body p { font-size:.75rem; line-height:1.4; }
   #menuGrid .price,

@@ -42,6 +42,20 @@
   };
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  // Show/hide back to top button
+  const backToTopBtn = qs('.to-top');
+  if (backToTopBtn) {
+    const toggleBackToTop = () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    };
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    toggleBackToTop(); // Check initial state
+  }
+
   // Intersection Observer animations
   const animateEls = qsa('[data-animate]');
   if ('IntersectionObserver' in window) {
@@ -106,8 +120,13 @@
     const tmp = heroTitle.textContent.trim();
     heroTitle.textContent = '';
     let idx = 0;
-    const type = () => {
-      heroTitle.textContent = tmp.slice(0, idx++);
+    let lastTime = 0;
+    const typeSpeed = 40; // milliseconds per character (adjust this for speed)
+    const type = (currentTime) => {
+      if (currentTime - lastTime >= typeSpeed) {
+        heroTitle.textContent = tmp.slice(0, idx++);
+        lastTime = currentTime;
+      }
       if (idx <= tmp.length) requestAnimationFrame(type);
       else heroTitle.innerHTML = original; // restore styled spans
     };

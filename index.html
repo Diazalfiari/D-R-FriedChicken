@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" dir="ltr">
+<html lang="id" dir="ltr" style="scroll-behavior: smooth;">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=20251005" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=20251007" />
   <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">{
     "@context": "https://schema.org",
@@ -62,7 +62,7 @@
         <h1 id="hero-title"><span class="accent">Renyah</span> • <span class="accent-alt">Gurih</span> • <span class="stroke">Bikin Nagih</span></h1>
         <p class="lead">Ayam goreng crispy dengan bumbu rempah khas yang meresap sampai ke dalam. Cocok untuk semua momen.</p>
         <div class="hero-cta">
-          <a href="#menu" class="btn primary">Lihat Menu</a>
+          <a href="#katalog" class="btn primary">Lihat Menu</a>
           <a href="#franchise" class="btn outline">Gabung Kemitraan</a>
         </div>
         <ul class="hero-stats" aria-label="Statistik singkat">
@@ -78,7 +78,7 @@
         </figure>
       </div>
     </div>
-    <a href="#menu" class="scroll-down" aria-label="Scroll ke bawah">↓</a>
+    <a href="#promo" class="scroll-down" aria-label="Scroll ke bawah">↓</a>
   </section>
 
   <section class="ribbon" id="promo" aria-label="Promo berjalan">
@@ -274,7 +274,7 @@
                 <p class="price">Rp. 3.000</p>
               </div>
             </article>
-            <article class="card highlight" style="margin: 0;">
+            <article class="card highlight" style="margin: 0; position: relative; padding-top: 1rem;">
               <div class="badge">Favorit</div>
               <div class="card-body">
                 <h3>🧀 Cheese Sauce</h3>
@@ -521,12 +521,13 @@
     <div class="sub-footer">
       <div class="container flex between center-v">
         <p>&copy; <span id="year"></span> D&R Fried Chicken. All rights reserved.</p>
-        <a href="#top" class="to-top" aria-label="Kembali ke atas">↑</a>
       </div>
     </div>
   </footer>
 
-  <script src="/assets/js/main.js?v=20251005" defer></script>
+  <a href="#hero" class="to-top" aria-label="Kembali ke atas">↑</a>
+
+  <script src="/assets/js/main.js?v=20251008" defer></script>
   <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/service-worker.js'))}</script>
 </body>
 </html>
