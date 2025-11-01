@@ -461,9 +461,15 @@
           const topik = document.getElementById('topik').value;
           const pesan = document.getElementById('pesan').value;
           
+          // Tentukan nomor WhatsApp berdasarkan topik
+          let waNumber = '6287789920334'; // Default untuk Kemitraan dan Lainnya
+          if (topik === 'Pemesanan') {
+            waNumber = '6285722326605'; // Nomor khusus untuk Pemesanan
+          }
+          
           const message = `Pesan dari Website D%26R Fried Chicken%0A%0ANama: ${encodeURIComponent(nama)}%0AEmail: ${encodeURIComponent(email)}%0ATopik: ${topik}%0APesan:%0A${encodeURIComponent(pesan)}`;
           
-          window.open(`https://wa.me/6287789920334?text=${message}`, '_blank');
+          window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
           
           // Reset form after sending
           document.getElementById('contactForm').reset();
